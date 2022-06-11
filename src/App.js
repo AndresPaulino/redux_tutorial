@@ -1,10 +1,10 @@
-import './App.css';
+import PostsList from './features/posts/PostsList';
 
 function App() {
   return (
     <div className='App'>
       <div>
-        Hello world!
+        <PostsList />
       </div>
     </div>
   );
