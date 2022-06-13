@@ -6,7 +6,11 @@ import TimeAgo from './TimeAgo';
 function PostsList() {
   const posts = useSelector(selectAllPosts);
 
-  const renderedPosts = posts.map((post) => (
+  const orderedPosts = posts.slice().sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  const renderedPosts = orderedPosts.map((post) => (
     <article key={posts.id}>
       <h3>{post.title}</h3>
       <p>{post.body}</p>
