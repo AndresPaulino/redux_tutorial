@@ -13,7 +13,7 @@ function AddPostForm() {
 
   const onTitleChange = (e) => setTitle(e.target.value);
   const onBodyChange = (e) => setBody(e.target.value);
-  const onUserIdChange = (e) => setUserId(e.target.value);
+  const onUserIdChange = (e) => setUserId(parseInt(e.target.value));
 
   const dispatch = useDispatch();
 
@@ -24,9 +24,9 @@ function AddPostForm() {
       setTitle('');
       setBody('');
     }
-    };
-    
-    const canSave = Boolean(title && body && userId);
+  };
+
+  const canSave = Boolean(title && body && userId);
 
   const usersOptions = users.map((user) => (
     <option key={user.id} value={user.id}>
