@@ -23,14 +23,6 @@ const usersSlice = createSlice({
       reducer(state, action) {
         state.push(action.payload);
       },
-      prepare(name) {
-        return {
-          payload: {
-            id: nanoid(),
-            name,
-          },
-        };
-      },
     },
   },
 });
